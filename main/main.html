@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMEH-Educational</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <!-- ---------top navigation section--------- -->
+    <section class="nav-top">
+        <div class="content">
+            <div>
+                <img src="../res/logo.svg" alt="icon">
+                <h1>GMEH</h1>
+            </div>
+            
+            <ul>
+                <li>Home</li>
+                <li>Course</li>
+                <li>Services</li>
+                <li>Teachers</li>
+                <li>About</li>
+            </ul>
+            <button class="download">Download</button>
+        </div>
+
+    </section>
+
+    <!-- -------------home-content top section------------ -->
+     <section class="home">
+        <div class="left">
+            <div>
+
+                <p> New Begining </p>
+                <div class="shadow">
+                    <img class="imgg" src="../res/flowerpot.png" alt="flower">
+                </div>
+            </div>
+            
+            <h1 class="head-tag">Courage Begins <span>with</span> <br>
+            <span>Preparation</span></h1>
+            <p class="slogan">The <span> classroom</span> of the <span>future</span> <br> Anytime, Anywhere</p>
+           
+         <div class="btns-layer">
+            <button class="big"> Download <i class="fa-solid fa-arrow-right"></i> </button>
+            
+            <button class="big play"><i class="fa-solid fa-play"></i></button>
+            <h2 class="intro">intro video</h2>
+         </div>
+
+         <div class="svg-container">
+            <svg class="curved-arrow" width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 10 Q100 150 190 10" stroke="#f84706" fill="none" stroke-width="5" />
+                <!-- <polygon points="190,10 180,20 180,0" fill="#f84706" /> -->
+            </svg>
+    
+         </div>
+        </div>
+        </div>
+        <div class="right">
+            <div id="main-img-container">
+                <img src="../res/student-Photoroom.png" alt="happy-clint">
+            </div>
+        </div>
+
+     </section>
+
+    <!-- ------------------- course section -------------------- -->
+   <section class="course">
+    <div class="left">
+        <div class="imgs">
+            <div class="sub">
+                <h3>Practice More...</h3>
+                <img src="../res/maths.jpg" alt="maths-img">
+            </div>
+            <div class="sub">
+                <h3>Real-life practice...</h3>
+                <img src="../res/english.jpg" alt="english-img">
+            </div>
+        </div>
+        
+        <div class="enroll">
+            <div class="circle-back">
+                <img src="../res/logo.svg" alt="logo">
+            </div>
+            
+        <h3>Join now, learn today</h3></div>
+    </div>
+    <div class="right">
+        <div class="shadow">
+            <img src="../res/penholder.png" alt="pen-holder">
+        </div>
+        
+        <h1>Our <span>Course</span></h1>
+        <p>Our courses are designed to help you grow your skills and advance your career. Learn from top experts in the field.</p>
+        <div class="course-content">
+            <div class="course-card">
+               
+                <h3>Mathematics</h3>
+                <p>Learn the basics of mathematics and improve your skills.</p>
+            </div>
+            <div class="course-card">
+                
+                <h3>English</h3>
+                <p>Learn the basics of English and improve your skills.</p>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+
+   </section>
+
+
+     <script>
+        function getRandomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createBox() {
+            const container = document.getElementById('main-img-container');
+            const rect = container.getBoundingClientRect(); // Get container's position and size
+
+            const box = document.createElement('div');
+            box.classList.add('box');
+
+           
+
+            // Generate random values for horizontal and vertical transformations
+            const randomX = getRandomInRange(-800, -600); // Random translateX between -500px and 500px
+            const randomY = getRandomInRange( -900, -100); // Random translateY between -300px and 300px
+
+            // Set CSS variables for random transformation
+            box.style.setProperty('--random-x', `${randomX}px`);
+            box.style.setProperty('--random-y', `${randomY}px`);
+
+            // Set initial size
+            box.style.height = '100px';
+            box.style.width = '100px';
+
+            // Add the box to the body
+            container.appendChild(box);
+
+            // Remove the box after animation ends
+            setTimeout(() => {
+                box.remove();
+            }, 5000); // Match animation duration
+        }
+
+        // Periodically create new boxes
+        setInterval(createBox, 1000); // New box every 500ms
+    </script>
+</body>
+</html>
